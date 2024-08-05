@@ -1,58 +1,43 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:rtsp_ffmpeg/rtsp_ffmpeg.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    const MaterialApp(
+      home: MyScreen(),
+    ),
+  );
 }
 
-class MyApp extends StatefulWidget {
+class MyScreen extends StatefulWidget {
+  const MyScreen({super.key});
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyScreen> createState() => MyScreenState();
 }
 
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+class MyScreenState extends State<MyScreen> {
+  RtspController? _controller;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = '';//await RtspFfmpeg.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+  @override
+  void dispose() {
+    _controller?.stop();
+    _controller = null;
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
-    );
+    return Center(child: RtspFFMpeg(createdCallback: (controller) {
+      setState(() {
+        _controller = controller;
+      });
+      _controller?.play("rtsp://my.ip.address/h264");
+    }));
   }
 }
