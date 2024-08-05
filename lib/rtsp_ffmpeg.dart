@@ -26,7 +26,9 @@ class RtspFFMpeg extends StatefulWidget {
   final RtspFFMpegCreatedCallback createdCallback;
 
   const RtspFFMpeg({
-    Key key, this.createdCallback,}) :super(key: key);
+    Key? key,
+    required this.createdCallback,
+  }) : super(key: key);
 
   @override
   _RtspFFMpegState createState() => _RtspFFMpegState();
