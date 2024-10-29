@@ -1,0 +1,4 @@
+# ninja log v5
+0	641	1730210481869163357	CMakeFiles/rtsp.dir/src/main/cpp/native-lib.cpp.o	6e74ed4435e99a4a
+642	665	1730210481895163329	/home/ethan/repos/video_feed_test/build/rtsp_ffmpeg/intermediates/cxx/Debug/294d2i3k/obj/arm64-v8a/librtsp.so	d054025f79ccfe19
+13	96	1730210657404149280	/home/ethan/repos/video_feed_test/build/rtsp_ffmpeg/intermediates/cxx/Debug/294d2i3k/obj/arm64-v8a/librtsp.so	d054025f79ccfe19

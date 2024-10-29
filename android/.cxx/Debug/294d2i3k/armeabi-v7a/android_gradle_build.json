@@ -1,0 +1,44 @@
+{
+  "buildFiles": [
+    "/home/ethan/repos/flutter_rtsp_ffmpeg/android/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/bin/ninja",
+      "-C",
+      "/home/ethan/repos/flutter_rtsp_ffmpeg/android/.cxx/Debug/294d2i3k/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/bin/ninja",
+    "-C",
+    "/home/ethan/repos/flutter_rtsp_ffmpeg/android/.cxx/Debug/294d2i3k/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "rtsp::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "rtsp",
+      "output": "/home/ethan/repos/video_feed_test/build/rtsp_ffmpeg/intermediates/cxx/Debug/294d2i3k/obj/armeabi-v7a/librtsp.so",
+      "runtimeFiles": [
+        "/home/ethan/repos/flutter_rtsp_ffmpeg/android/src/main/jniLibs/armeabi-v7a/libavcodec.so",
+        "/home/ethan/repos/flutter_rtsp_ffmpeg/android/src/main/jniLibs/armeabi-v7a/libavformat.so",
+        "/home/ethan/repos/flutter_rtsp_ffmpeg/android/src/main/jniLibs/armeabi-v7a/libavutil.so",
+        "/home/ethan/repos/flutter_rtsp_ffmpeg/android/src/main/jniLibs/armeabi-v7a/libswresample.so",
+        "/home/ethan/repos/flutter_rtsp_ffmpeg/android/src/main/jniLibs/armeabi-v7a/libswscale.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/ethan/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/ethan/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
